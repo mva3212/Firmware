@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="it.baeyens.arduino.core.toolChain.release.578408740">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="it.baeyens.arduino.core.toolChain.release.578408740" moduleId="org.eclipse.cdt.core.settings" name="Release">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildProperties="" description="" id="it.baeyens.arduino.core.toolChain.release.578408740" name="Release" parent="org.eclipse.cdt.build.core.emptycfg">
+					<folderInfo id="it.baeyens.arduino.core.toolChain.release.578408740.417448065" name="/" resourcePath="">
+						<toolChain id="it.baeyens.arduino.core.toolChain.release.1054377752" name="Arduino Toolchain" superClass="it.baeyens.arduino.core.toolChain.release">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="it.baeyens.arduino.targetplatform.2110520" name="Arduino Target" osList="all" superClass="it.baeyens.arduino.targetplatform"/>
+							<builder buildPath="${workspace_loc:/base_station}/Release" enabledIncrementalBuild="true" id="it.baeyens.arduino.sketch.builder.102644652" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Arduino sketch builder" superClass="it.baeyens.arduino.sketch.builder"/>
+							<tool id="it.baeyens.arduino.tool.sketch.compiler.cpp.65697599" name="Arduino C++ Compiler" superClass="it.baeyens.arduino.tool.sketch.compiler.cpp">
+								<option id="it.baeyens.arduino.compiler.cpp.sketch.option.incpath.1007459988" name="Include Paths (-I)" superClass="it.baeyens.arduino.compiler.cpp.sketch.option.incpath" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/base_station/arduino/core}&quot;"/>
+									<listOptionValue builtIn="false" value="/home/michael/Desktop/arduino-1.5.8/hardware/arduino/avr/libraries/SPI"/>
+									<listOptionValue builtIn="false" value="/home/michael/Projects/hg_base/libraries/HVG_disp"/>
+									<listOptionValue builtIn="false" value="/home/michael/Projects/hg_base/libraries/HVG_comms"/>
+									<listOptionValue builtIn="false" value="/home/michael/Projects/hg_base/libraries/RadioHead"/>
+									<listOptionValue builtIn="false" value="/home/michael/Projects/hg_base/libraries/W5100"/>
+									<listOptionValue builtIn="false" value="/home/michael/Desktop/arduino-1.5.8/hardware/arduino/avr/libraries/EEPROM"/>
+									<listOptionValue builtIn="false" value="/home/michael/Desktop/arduino-1.5.8/hardware/arduino/avr/libraries/*"/>
+									<listOptionValue builtIn="false" value="/home/michael/Projects/hg_base/libraries"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/base_station/arduino/variant}&quot;"/>
+									<listOptionValue builtIn="false" value="/home/michael/Desktop/arduino-1.5.8/libraries"/>
+									<listOptionValue builtIn="false" value="/home/michael/Desktop/arduino-1.5.8/hardware/arduino/avr/libraries"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/base_station/libraries}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/base_station/Libraries/HVG_comms}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/base_station/Libraries/HVG_disp}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/base_station/Libraries/RadioHead}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/base_station/Libraries/W5100}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/base_station/Libraries/W5100/utility}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/base_station/Libraries/EEPROM}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/base_station/Libraries/SPI}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/base_station/Libraries/NRF24}&quot;"/>
+								</option>
+								<inputType id="it.baeyens.arduino.compiler.cpp.sketch.input.1068823551" name="CPP source files" superClass="it.baeyens.arduino.compiler.cpp.sketch.input"/>
+							</tool>
+							<tool id="it.baeyens.arduino.tool.compiler.c.359905832" name="Arduino C Compiler" superClass="it.baeyens.arduino.tool.compiler.c">
+								<option id="it.baeyens.arduino.compiler.c.sketch.option.incpath.1831028464" name="Include Paths (-I)" superClass="it.baeyens.arduino.compiler.c.sketch.option.incpath" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/base_station/arduino/core}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/base_station/arduino/variant}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/base_station/libraries}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/base_station/Libraries/HVG_comms}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/base_station/Libraries/HVG_disp}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/base_station/Libraries/RadioHead}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/base_station/Libraries/W5100}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/base_station/Libraries/W5100/utility}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/base_station/Libraries/EEPROM}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/base_station/Libraries/SPI}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/base_station/Libraries/NRF24}&quot;"/>
+								</option>
+								<inputType id="it.baeyens.arduino.compiler.c.sketch.input.246454634" name="C Source Files" superClass="it.baeyens.arduino.compiler.c.sketch.input"/>
+							</tool>
+							<tool id="it.baeyens.arduino.tool.sketch.compiler.s.275246671" name="Arduino Assembler" superClass="it.baeyens.arduino.tool.sketch.compiler.s"/>
+							<tool id="it.baeyens.arduino.tool.ar.2025008449" name="Arduino archiver" superClass="it.baeyens.arduino.tool.ar"/>
+							<tool id="it.baeyens.arduino.tool.combine.318209940" name="Arduino combiner" superClass="it.baeyens.arduino.tool.combine"/>
+							<tool id="it.baeyens.arduino.tool.objcopy.eep.1791849257" name="Arduino tool Create eeprom" superClass="it.baeyens.arduino.tool.objcopy.eep"/>
+							<tool id="it.baeyens.arduino.tool.objcopy.flash.921902469" name="Arduino tool Create hex" superClass="it.baeyens.arduino.tool.objcopy.flash"/>
+							<tool id="it.baeyens.arduino.tool.size.659491974" name="Arduino tool Print Size" superClass="it.baeyens.arduino.tool.size"/>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="Visual Micro|Libraries/RadioHead/STM32ArduinoCompat|Libraries/RadioHead/tools|Libraries/*/?xamples|Libraries/*/?xtras" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="base_station.null.34467822" name="base_station"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/base_station"/>
+		</configuration>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+</cproject>

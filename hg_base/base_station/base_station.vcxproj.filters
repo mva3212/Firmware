@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="_core">
+      <UniqueIdentifier>{7b017f0a-1dae-4631-b1a1-5d7fc1eed3b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries">
+      <UniqueIdentifier>{b7ae26bf-ad53-46df-a512-1af3facf2bb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\EEPROM">
+      <UniqueIdentifier>{88ab1d07-43b9-4297-a716-a21591ba067b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\HVG_disp">
+      <UniqueIdentifier>{17a70400-c5a6-40d9-8742-a5ce0392f41a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\SPI">
+      <UniqueIdentifier>{5f13fdcc-3734-425c-8cc6-c86a4a4eece5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\Ethernet">
+      <UniqueIdentifier>{511dadc2-40ef-4c46-acef-d439b1b2dc42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\Ethernet\src">
+      <UniqueIdentifier>{d991b045-1ecc-4e58-9357-45b26f966e4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\Ethernet\src\utility">
+      <UniqueIdentifier>{c7dbc150-ca15-4d5f-a923-ecb102551629}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\RadioHead">
+      <UniqueIdentifier>{28707d96-dfdf-4e7c-8002-b2ccd3d8a23b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Visual Micro\.base_station.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\Arduino.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\binary.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\Client.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\HardwareSerial.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\HardwareSerial_private.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\IPAddress.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\new.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\Print.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\Printable.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\Server.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\Stream.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\Udp.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\USBAPI.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\USBCore.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\USBDesc.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\WCharacter.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\wiring_private.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\WString.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\variants\leonardo\pins_arduino.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\libraries\EEPROM\EEPROM.h">
+      <Filter>_libraries\EEPROM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\HVG_disp\hvg_disp.h">
+      <Filter>_libraries\HVG_disp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\HVG_disp\twi.h">
+      <Filter>_libraries\HVG_disp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\libraries\SPI\SPI.h">
+      <Filter>_libraries\SPI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\libraries\Ethernet\src\Dhcp.h">
+      <Filter>_libraries\Ethernet\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\libraries\Ethernet\src\Dns.h">
+      <Filter>_libraries\Ethernet\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\libraries\Ethernet\src\Ethernet.h">
+      <Filter>_libraries\Ethernet\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\libraries\Ethernet\src\EthernetClient.h">
+      <Filter>_libraries\Ethernet\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\libraries\Ethernet\src\EthernetServer.h">
+      <Filter>_libraries\Ethernet\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\libraries\Ethernet\src\EthernetUdp.h">
+      <Filter>_libraries\Ethernet\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\libraries\Ethernet\src\utility\socket.h">
+      <Filter>_libraries\Ethernet\src\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\libraries\Ethernet\src\utility\util.h">
+      <Filter>_libraries\Ethernet\src\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\arduio158\arduino-1.5.8\arduino158\libraries\Ethernet\src\utility\w5100.h">
+      <Filter>_libraries\Ethernet\src\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\RadioHead\RadioHead.h">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\RadioHead\radio_config_Si4460.h">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\RadioHead\RHCRC.h">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\RadioHead\RHDatagram.h">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\RadioHead\RHGenericDriver.h">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\RadioHead\RHGenericSPI.h">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\RadioHead\RHHardwareSPI.h">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\RadioHead\RHMesh.h">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\RadioHead\RHNRFSPIDriver.h">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\RadioHead\RHReliableDatagram.h">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\RadioHead\RHRouter.h">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\RadioHead\RHSoftwareSPI.h">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\RadioHead\RHSPIDriver.h">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\RadioHead\RHTcpProtocol.h">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\RadioHead\RH_ASK.h">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\RadioHead\RH_NRF24.h">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\RadioHead\RH_NRF905.h">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\RadioHead\RH_RF22.h">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\RadioHead\RH_RF24.h">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\RadioHead\RH_RF69.h">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\RadioHead\RH_RF95.h">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\RadioHead\RH_Serial.h">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\RadioHead\RH_TCP.h">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClInclude>
+    <ClInclude Include="DisplayStrings.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="base_station.ino" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\abi.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\CDC.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\HardwareSerial.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\HardwareSerial0.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\HardwareSerial1.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\HardwareSerial2.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\HardwareSerial3.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\HID.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\hooks.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\IPAddress.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\main.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\new.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\Print.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\Stream.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\Tone.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\USBCore.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\WInterrupts.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\wiring.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\wiring_analog.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\wiring_digital.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\wiring_pulse.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\wiring_shift.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\WMath.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\cores\arduino\WString.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\libraries\EEPROM\EEPROM.cpp">
+      <Filter>_libraries\EEPROM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\HVG_disp\hvg_disp.cpp">
+      <Filter>_libraries\HVG_disp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\HVG_disp\twi.c">
+      <Filter>_libraries\HVG_disp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\hardware\arduino\avr\libraries\SPI\SPI.cpp">
+      <Filter>_libraries\SPI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\libraries\Ethernet\src\Dhcp.cpp">
+      <Filter>_libraries\Ethernet\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\libraries\Ethernet\src\Dns.cpp">
+      <Filter>_libraries\Ethernet\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\libraries\Ethernet\src\Ethernet.cpp">
+      <Filter>_libraries\Ethernet\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\libraries\Ethernet\src\EthernetClient.cpp">
+      <Filter>_libraries\Ethernet\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\libraries\Ethernet\src\EthernetServer.cpp">
+      <Filter>_libraries\Ethernet\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\libraries\Ethernet\src\EthernetUdp.cpp">
+      <Filter>_libraries\Ethernet\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\libraries\Ethernet\src\utility\socket.cpp">
+      <Filter>_libraries\Ethernet\src\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\arduio158\arduino-1.5.8\arduino158\libraries\Ethernet\src\utility\w5100.cpp">
+      <Filter>_libraries\Ethernet\src\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\RadioHead\RHCRC.cpp">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\RadioHead\RHDatagram.cpp">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\RadioHead\RHGenericDriver.cpp">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\RadioHead\RHGenericSPI.cpp">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\RadioHead\RHHardwareSPI.cpp">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\RadioHead\RHMesh.cpp">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\RadioHead\RHNRFSPIDriver.cpp">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\RadioHead\RHReliableDatagram.cpp">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\RadioHead\RHRouter.cpp">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\RadioHead\RHSoftwareSPI.cpp">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\RadioHead\RHSPIDriver.cpp">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\RadioHead\RH_ASK.cpp">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\RadioHead\RH_NRF24.cpp">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\RadioHead\RH_NRF905.cpp">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\RadioHead\RH_RF22.cpp">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\RadioHead\RH_RF24.cpp">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\RadioHead\RH_RF69.cpp">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\RadioHead\RH_RF95.cpp">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\RadioHead\RH_Serial.cpp">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\RadioHead\RH_TCP.cpp">
+      <Filter>_libraries\RadioHead</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

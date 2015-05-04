@@ -1,0 +1,1638 @@
+   1               		.file	"Caterina.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               		.section	.text.StartSketch,"ax",@progbits
+  17               	.global	StartSketch
+  19               	StartSketch:
+  20               	.LFB93:
+  21               	.LSM0:
+  22               	/* prologue: function */
+  23               	/* frame size = 0 */
+  24               	.LSM1:
+  25               	/* #APP */
+  26               	 ;  78 "Caterina.c" 1
+  27 0000 F894      		cli
+  28               	 ;  0 "" 2
+  29               	.LSM2:
+  30               	/* #NOAPP */
+  31 0002 1092 6F00 		sts 111,__zero_reg__
+  32               	.LSM3:
+  33 0006 1092 8100 		sts 129,__zero_reg__
+  34               	.LSM4:
+  35 000a 1092 8500 		sts 133,__zero_reg__
+  36               	.LSM5:
+  37 000e 1092 8400 		sts 132,__zero_reg__
+  38               	.LSM6:
+  39 0012 81E0      		ldi r24,lo8(1)
+  40 0014 85BF      		out 85-32,r24
+  41               	.LSM7:
+  42 0016 15BE      		out 85-32,__zero_reg__
+  43               	.LSM8:
+  44 0018 5A98      		cbi 43-32,2
+  45               	.LSM9:
+  46 001a 5B98      		cbi 43-32,3
+  47               	.LSM10:
+  48               	/* #APP */
+  49               	 ;  95 "Caterina.c" 1
+  50 001c 0C94 0000 		jmp 0x0000
+  51               	 ;  0 "" 2
+  52               	/* epilogue start */
+  53               	.LSM11:
+  54               	/* #NOAPP */
+  55 0020 0895      		ret
+  56               	.LFE93:
+  58               		.section	.text.__vector_17,"ax",@progbits
+  59               	.global	__vector_17
+  61               	__vector_17:
+  62               	.LFB96:
+  63               	.LSM12:
+  64 0000 1F92      		push __zero_reg__
+  65 0002 0F92      		push r0
+  66 0004 0FB6      		in r0,__SREG__
+  67 0006 0F92      		push r0
+  68 0008 1124      		clr __zero_reg__
+  69 000a 2F93      		push r18
+  70 000c 8F93      		push r24
+  71 000e 9F93      		push r25
+  72 0010 EF93      		push r30
+  73 0012 FF93      		push r31
+  74               	/* prologue: Signal */
+  75               	/* frame size = 0 */
+  76               	.LSM13:
+  77 0014 1092 8500 		sts 133,__zero_reg__
+  78               	.LSM14:
+  79 0018 1092 8400 		sts 132,__zero_reg__
+  80               	.LSM15:
+  81 001c 8091 0000 		lds r24,TxLEDPulse
+  82 0020 9091 0000 		lds r25,(TxLEDPulse)+1
+  83 0024 0097      		sbiw r24,0
+  84 0026 01F0      		breq .L4
+  85 0028 0197      		sbiw r24,1
+  86 002a 9093 0000 		sts (TxLEDPulse)+1,r25
+  87 002e 8093 0000 		sts TxLEDPulse,r24
+  88               	.L4:
+  89               	.LSM16:
+  90 0032 8091 0000 		lds r24,RxLEDPulse
+  91 0036 9091 0000 		lds r25,(RxLEDPulse)+1
+  92 003a 0097      		sbiw r24,0
+  93 003c 01F0      		breq .L5
+  94 003e 0197      		sbiw r24,1
+  95 0040 9093 0000 		sts (RxLEDPulse)+1,r25
+  96 0044 8093 0000 		sts RxLEDPulse,r24
+  97 0048 892B      		or r24,r25
+  98 004a 01F4      		brne .L5
+  99               	.LSM17:
+ 100 004c 5B98      		cbi 43-32,3
+ 101               	.L5:
+ 102               	.LBB76:
+ 103               	.LSM18:
+ 104 004e E0E0      		ldi r30,lo8(0)
+ 105 0050 F0E0      		ldi r31,hi8(0)
+ 106               	.LVL0:
+ 107               	/* #APP */
+ 108               	 ;  200 "Caterina.c" 1
+ 109 0052 8591      		lpm r24, Z+
+ 110 0054 9491      		lpm r25, Z
+ 111               		
+ 112               	 ;  0 "" 2
+ 113               	.LVL1:
+ 114               	/* #NOAPP */
+ 115               	.LBE76:
+ 116 0056 8F5F      		subi r24,lo8(-1)
+ 117 0058 9F4F      		sbci r25,hi8(-1)
+ 118 005a 01F0      		breq .L7
+ 119               	.LSM19:
+ 120 005c 8091 0000 		lds r24,Timeout
+ 121 0060 9091 0000 		lds r25,(Timeout)+1
+ 122               	.LVL2:
+ 123 0064 0196      		adiw r24,1
+ 124 0066 9093 0000 		sts (Timeout)+1,r25
+ 125 006a 8093 0000 		sts Timeout,r24
+ 126               	.LVL3:
+ 127               	.L7:
+ 128               	/* epilogue start */
+ 129               	.LSM20:
+ 130 006e FF91      		pop r31
+ 131 0070 EF91      		pop r30
+ 132               	.LVL4:
+ 133 0072 9F91      		pop r25
+ 134 0074 8F91      		pop r24
+ 135               	.LVL5:
+ 136 0076 2F91      		pop r18
+ 137 0078 0F90      		pop r0
+ 138 007a 0FBE      		out __SREG__,r0
+ 139 007c 0F90      		pop r0
+ 140 007e 1F90      		pop __zero_reg__
+ 141 0080 1895      		reti
+ 142               	.LFE96:
+ 144               		.section	.text.FetchNextCommandByte,"ax",@progbits
+ 146               	FetchNextCommandByte:
+ 147               	.LFB100:
+ 148               	.LSM21:
+ 149               	/* prologue: function */
+ 150               	/* frame size = 0 */
+ 151               	.LBB77:
+ 152               	.LBB78:
+ 153               	.LSM22:
+ 154 0000 84E0      		ldi r24,lo8(4)
+ 155 0002 8093 E900 		sts 233,r24
+ 156 0006 00C0      		rjmp .L9
+ 157               	.L13:
+ 158               	.LBE78:
+ 159               	.LBE77:
+ 160               	.LBB79:
+ 161               	.LBB80:
+ 162               	.LSM23:
+ 163 0008 8091 E800 		lds r24,232
+ 164 000c 8B77      		andi r24,lo8(123)
+ 165 000e 8093 E800 		sts 232,r24
+ 166 0012 00C0      		rjmp .L10
+ 167               	.L12:
+ 168               	.LBE80:
+ 169               	.LBE79:
+ 170               	.LSM24:
+ 171 0014 8EB3      		in r24,62-32
+ 172 0016 8823      		tst r24
+ 173 0018 01F0      		breq .L11
+ 174               	.L10:
+ 175               	.LBB81:
+ 176               	.LBB82:
+ 177               	.LSM25:
+ 178 001a 8091 E800 		lds r24,232
+ 179               	.LBE82:
+ 180               	.LBE81:
+ 181               	.LSM26:
+ 182 001e 82FF      		sbrs r24,2
+ 183 0020 00C0      		rjmp .L12
+ 184               	.L9:
+ 185               	.LBB83:
+ 186               	.LBB84:
+ 187               	.LSM27:
+ 188 0022 8091 E800 		lds r24,232
+ 189               	.LBE84:
+ 190               	.LBE83:
+ 191               	.LSM28:
+ 192 0026 85FF      		sbrs r24,5
+ 193 0028 00C0      		rjmp .L13
+ 194               	.LBB85:
+ 195               	.LBB86:
+ 196               	.LSM29:
+ 197 002a 8091 F100 		lds r24,241
+ 198               	.L11:
+ 199               	.LBE86:
+ 200               	.LBE85:
+ 201               	.LSM30:
+ 202 002e 0895      		ret
+ 203               	.LFE100:
+ 205               		.section	.text.WriteNextResponseByte,"ax",@progbits
+ 207               	WriteNextResponseByte:
+ 208               	.LFB101:
+ 209               	.LSM31:
+ 210               	.LVL6:
+ 211               	/* prologue: function */
+ 212               	/* frame size = 0 */
+ 213 0000 982F      		mov r25,r24
+ 214               	.LBB87:
+ 215               	.LBB88:
+ 216               	.LSM32:
+ 217 0002 83E0      		ldi r24,lo8(3)
+ 218               	.LVL7:
+ 219 0004 8093 E900 		sts 233,r24
+ 220               	.LBE88:
+ 221               	.LBE87:
+ 222               	.LBB89:
+ 223               	.LBB90:
+ 224               	.LSM33:
+ 225 0008 8091 E800 		lds r24,232
+ 226               	.LBE90:
+ 227               	.LBE89:
+ 228               	.LSM34:
+ 229 000c 85FD      		sbrc r24,5
+ 230 000e 00C0      		rjmp .L17
+ 231               	.LBB91:
+ 232               	.LBB92:
+ 233               	.LSM35:
+ 234 0010 8091 E800 		lds r24,232
+ 235 0014 8E77      		andi r24,lo8(126)
+ 236 0016 8093 E800 		sts 232,r24
+ 237 001a 00C0      		rjmp .L18
+ 238               	.L20:
+ 239               	.LBE92:
+ 240               	.LBE91:
+ 241               	.LSM36:
+ 242 001c 8EB3      		in r24,62-32
+ 243 001e 8823      		tst r24
+ 244 0020 01F0      		breq .L21
+ 245               	.L18:
+ 246               	.LBB93:
+ 247               	.LBB94:
+ 248               	.LSM37:
+ 249 0022 8091 E800 		lds r24,232
+ 250               	.LBE94:
+ 251               	.LBE93:
+ 252               	.LSM38:
+ 253 0026 80FF      		sbrs r24,0
+ 254 0028 00C0      		rjmp .L20
+ 255               	.L17:
+ 256               	.LBB95:
+ 257               	.LBB96:
+ 258               	.LSM39:
+ 259 002a 9093 F100 		sts 241,r25
+ 260               	.LBE96:
+ 261               	.LBE95:
+ 262               	.LSM40:
+ 263 002e 84E6      		ldi r24,lo8(100)
+ 264 0030 90E0      		ldi r25,hi8(100)
+ 265 0032 9093 0000 		sts (TxLEDPulse)+1,r25
+ 266 0036 8093 0000 		sts TxLEDPulse,r24
+ 267               	.L21:
+ 268 003a 0895      		ret
+ 269               	.LFE101:
+ 271               		.data
+ 272               	.LC0:
+ 273 0000 4341 5445 		.string	"CATERINA"
+ 273      5249 4E41 
+ 273      00
+ 274               		.section	.text.CDC_Task,"ax",@progbits
+ 275               	.global	CDC_Task
+ 277               	CDC_Task:
+ 278               	.LFB102:
+ 279               	.LSM41:
+ 280 0000 4F92      		push r4
+ 281 0002 5F92      		push r5
+ 282 0004 6F92      		push r6
+ 283 0006 7F92      		push r7
+ 284 0008 8F92      		push r8
+ 285 000a 9F92      		push r9
+ 286 000c AF92      		push r10
+ 287 000e BF92      		push r11
+ 288 0010 CF92      		push r12
+ 289 0012 DF92      		push r13
+ 290 0014 EF92      		push r14
+ 291 0016 FF92      		push r15
+ 292 0018 0F93      		push r16
+ 293 001a 1F93      		push r17
+ 294 001c CF93      		push r28
+ 295 001e DF93      		push r29
+ 296               	/* prologue: function */
+ 297               	/* frame size = 0 */
+ 298               	.LBB129:
+ 299               	.LBB130:
+ 300               	.LSM42:
+ 301 0020 84E0      		ldi r24,lo8(4)
+ 302 0022 8093 E900 		sts 233,r24
+ 303               	.LBE130:
+ 304               	.LBE129:
+ 305               	.LBB131:
+ 306               	.LBB132:
+ 307               	.LSM43:
+ 308 0026 8091 E800 		lds r24,232
+ 309               	.LBE132:
+ 310               	.LBE131:
+ 311               	.LSM44:
+ 312 002a 82FF      		sbrs r24,2
+ 313 002c 00C0      		rjmp .L79
+ 314               	.LSM45:
+ 315 002e 5B9A      		sbi 43-32,3
+ 316               	.LSM46:
+ 317 0030 84E6      		ldi r24,lo8(100)
+ 318 0032 90E0      		ldi r25,hi8(100)
+ 319 0034 9093 0000 		sts (RxLEDPulse)+1,r25
+ 320 0038 8093 0000 		sts RxLEDPulse,r24
+ 321               	.LSM47:
+ 322 003c 0E94 0000 		call FetchNextCommandByte
+ 323 0040 182F      		mov r17,r24
+ 324               	.LVL8:
+ 325               	.LSM48:
+ 326 0042 8534      		cpi r24,lo8(69)
+ 327 0044 01F4      		brne .L24
+ 328               	.LVL9:
+ 329               	.LSM49:
+ 330 0046 8CEA      		ldi r24,lo8(3500)
+ 331 0048 9DE0      		ldi r25,hi8(3500)
+ 332               	.LVL10:
+ 333 004a 9093 0000 		sts (Timeout)+1,r25
+ 334 004e 8093 0000 		sts Timeout,r24
+ 335               	.L25:
+ 336               	.LSM50:
+ 337 0052 07B6      		in __tmp_reg__,87-32
+ 338 0054 00FC      		sbrc __tmp_reg__,0
+ 339 0056 00C0      		rjmp .L25
+ 340               	.L80:
+ 341 0058 F999      		sbic 63-32,1
+ 342 005a 00C0      		rjmp .L80
+ 343 005c 81E1      		ldi r24,lo8(17)
+ 344               	/* #APP */
+ 345               	 ;  484 "Caterina.c" 1
+ 346 005e 8093 5700 		sts 87, r24
+ 347 0062 E895      		spm
+ 348               		
+ 349               	 ;  0 "" 2
+ 350               	/* #NOAPP */
+ 351 0064 00C0      		rjmp .L93
+ 352               	.LVL11:
+ 353               	.L24:
+ 354               	.LSM51:
+ 355 0066 8435      		cpi r24,lo8(84)
+ 356 0068 01F4      		brne .L28
+ 357               	.LSM52:
+ 358 006a 0E94 0000 		call FetchNextCommandByte
+ 359               	.LVL12:
+ 360               	.L93:
+ 361               	.LSM53:
+ 362 006e 8DE0      		ldi r24,lo8(13)
+ 363 0070 00C0      		rjmp .L92
+ 364               	.LVL13:
+ 365               	.L28:
+ 366               	.LSM54:
+ 367 0072 8C34      		cpi r24,lo8(76)
+ 368 0074 01F0      		breq .L93
+ 369 0076 8035      		cpi r24,lo8(80)
+ 370 0078 01F0      		breq .L93
+ 371               	.L30:
+ 372               	.LSM55:
+ 373 007a 8437      		cpi r24,lo8(116)
+ 374 007c 01F4      		brne .L31
+ 375               	.LSM56:
+ 376 007e 84E4      		ldi r24,lo8(68)
+ 377               	.LVL14:
+ 378 0080 0E94 0000 		call WriteNextResponseByte
+ 379               	.LSM57:
+ 380 0084 80E0      		ldi r24,lo8(0)
+ 381 0086 00C0      		rjmp .L92
+ 382               	.LVL15:
+ 383               	.L31:
+ 384               	.LSM58:
+ 385 0088 8136      		cpi r24,lo8(97)
+ 386 008a 01F4      		brne .L32
+ 387               	.LSM59:
+ 388 008c 89E5      		ldi r24,lo8(89)
+ 389               	.LVL16:
+ 390 008e 00C0      		rjmp .L92
+ 391               	.LVL17:
+ 392               	.L32:
+ 393               	.LSM60:
+ 394 0090 8134      		cpi r24,lo8(65)
+ 395 0092 01F4      		brne .L33
+ 396               	.LSM61:
+ 397 0094 0E94 0000 		call FetchNextCommandByte
+ 398               	.LVL18:
+ 399 0098 182F      		mov r17,r24
+ 400               	.LVL19:
+ 401               	.LSM62:
+ 402 009a 0E94 0000 		call FetchNextCommandByte
+ 403 009e 90E0      		ldi r25,lo8(0)
+ 404 00a0 880F      		lsl r24
+ 405 00a2 991F      		rol r25
+ 406 00a4 AA27      		clr r26
+ 407 00a6 97FD      		sbrc r25,7
+ 408 00a8 A095      		com r26
+ 409 00aa BA2F      		mov r27,r26
+ 410 00ac 312F      		mov r19,r17
+ 411 00ae 330F      		lsl r19
+ 412 00b0 20E0      		ldi r18,lo8(0)
+ 413 00b2 4427      		clr r20
+ 414 00b4 37FD      		sbrc r19,7
+ 415 00b6 4095      		com r20
+ 416 00b8 542F      		mov r21,r20
+ 417 00ba 822B      		or r24,r18
+ 418 00bc 932B      		or r25,r19
+ 419 00be A42B      		or r26,r20
+ 420 00c0 B52B      		or r27,r21
+ 421 00c2 00C0      		rjmp .L95
+ 422               	.LVL20:
+ 423               	.L33:
+ 424               	.LSM63:
+ 425 00c4 8037      		cpi r24,lo8(112)
+ 426 00c6 01F4      		brne .L34
+ 427               	.LSM64:
+ 428 00c8 83E5      		ldi r24,lo8(83)
+ 429               	.LVL21:
+ 430 00ca 00C0      		rjmp .L92
+ 431               	.LVL22:
+ 432               	.L34:
+ 433               	.LSM65:
+ 434 00cc 8335      		cpi r24,lo8(83)
+ 435 00ce 01F4      		brne .L35
+ 436 00d0 C0E0      		ldi r28,lo8(.LC0)
+ 437 00d2 D0E0      		ldi r29,hi8(.LC0)
+ 438               	.L36:
+ 439               	.LBB133:
+ 440               	.LSM66:
+ 441 00d4 8991      		ld r24,Y+
+ 442               	.LVL23:
+ 443 00d6 0E94 0000 		call WriteNextResponseByte
+ 444               	.LSM67:
+ 445 00da 20E0      		ldi r18,hi8(.LC0+7)
+ 446 00dc C030      		cpi r28,lo8(.LC0+7)
+ 447 00de D207      		cpc r29,r18
+ 448 00e0 01F4      		brne .L36
+ 449 00e2 00C0      		rjmp .L27
+ 450               	.LVL24:
+ 451               	.L35:
+ 452               	.LBE133:
+ 453               	.LSM68:
+ 454 00e4 8635      		cpi r24,lo8(86)
+ 455 00e6 01F4      		brne .L37
+ 456               	.LSM69:
+ 457 00e8 81E3      		ldi r24,lo8(49)
+ 458               	.LVL25:
+ 459 00ea 0E94 0000 		call WriteNextResponseByte
+ 460               	.LSM70:
+ 461 00ee 80E3      		ldi r24,lo8(48)
+ 462 00f0 00C0      		rjmp .L92
+ 463               	.LVL26:
+ 464               	.L37:
+ 465               	.LSM71:
+ 466 00f2 8337      		cpi r24,lo8(115)
+ 467 00f4 01F4      		brne .L38
+ 468               	.LSM72:
+ 469 00f6 87E8      		ldi r24,lo8(-121)
+ 470               	.LVL27:
+ 471 00f8 0E94 0000 		call WriteNextResponseByte
+ 472               	.LSM73:
+ 473 00fc 85E9      		ldi r24,lo8(-107)
+ 474 00fe 0E94 0000 		call WriteNextResponseByte
+ 475               	.LSM74:
+ 476 0102 8EE1      		ldi r24,lo8(30)
+ 477 0104 00C0      		rjmp .L92
+ 478               	.LVL28:
+ 479               	.L38:
+ 480               	.LSM75:
+ 481 0106 8536      		cpi r24,lo8(101)
+ 482 0108 01F4      		brne .L39
+ 483 010a E0E0      		ldi r30,lo8(0)
+ 484 010c F0E0      		ldi r31,hi8(0)
+ 485               	.LBB134:
+ 486               	.LSM76:
+ 487 010e 93E0      		ldi r25,lo8(3)
+ 488               	.LSM77:
+ 489 0110 85E0      		ldi r24,lo8(5)
+ 490               	.LVL29:
+ 491               	.L42:
+ 492               	.LSM78:
+ 493               	/* #APP */
+ 494               	 ;  548 "Caterina.c" 1
+ 495 0112 9093 5700 		sts 87, r25
+ 496 0116 E895      		spm
+ 497               		
+ 498               	 ;  0 "" 2
+ 499               	/* #NOAPP */
+ 500               	.L40:
+ 501               	.LSM79:
+ 502 0118 07B6      		in __tmp_reg__,87-32
+ 503 011a 00FC      		sbrc __tmp_reg__,0
+ 504 011c 00C0      		rjmp .L40
+ 505               	.LSM80:
+ 506               	/* #APP */
+ 507               	 ;  550 "Caterina.c" 1
+ 508 011e 8093 5700 		sts 87, r24
+ 509 0122 E895      		spm
+ 510               		
+ 511               	 ;  0 "" 2
+ 512               	/* #NOAPP */
+ 513               	.L41:
+ 514               	.LSM81:
+ 515 0124 07B6      		in __tmp_reg__,87-32
+ 516 0126 00FC      		sbrc __tmp_reg__,0
+ 517 0128 00C0      		rjmp .L41
+ 518 012a E058      		subi r30,lo8(-(128))
+ 519 012c FF4F      		sbci r31,hi8(-(128))
+ 520               	.LSM82:
+ 521 012e A0E7      		ldi r26,hi8(28672)
+ 522 0130 E030      		cpi r30,lo8(28672)
+ 523 0132 FA07      		cpc r31,r26
+ 524 0134 01F4      		brne .L42
+ 525 0136 00C0      		rjmp .L93
+ 526               	.LVL30:
+ 527               	.L39:
+ 528               	.LBE134:
+ 529               	.LSM83:
+ 530 0138 8237      		cpi r24,lo8(114)
+ 531 013a 01F4      		brne .L43
+ 532               	.LBB135:
+ 533               	.LSM84:
+ 534 013c E1E0      		ldi r30,lo8(1)
+ 535 013e F0E0      		ldi r31,hi8(1)
+ 536 0140 89E0      		ldi r24,lo8(9)
+ 537               	.LVL31:
+ 538               	/* #APP */
+ 539               	 ;  569 "Caterina.c" 1
+ 540 0142 8093 5700 		sts 87, r24
+ 541 0146 8491      		lpm r24, Z
+ 542               		
+ 543               	 ;  0 "" 2
+ 544               	.LVL32:
+ 545               	/* #NOAPP */
+ 546 0148 00C0      		rjmp .L92
+ 547               	.LVL33:
+ 548               	.L43:
+ 549               	.LBE135:
+ 550               	.LSM85:
+ 551 014a 8634      		cpi r24,lo8(70)
+ 552 014c 01F4      		brne .L44
+ 553               	.LBB136:
+ 554               	.LSM86:
+ 555 014e E0E0      		ldi r30,lo8(0)
+ 556 0150 F0E0      		ldi r31,hi8(0)
+ 557 0152 89E0      		ldi r24,lo8(9)
+ 558               	.LVL34:
+ 559               	/* #APP */
+ 560               	 ;  573 "Caterina.c" 1
+ 561 0154 8093 5700 		sts 87, r24
+ 562 0158 8491      		lpm r24, Z
+ 563               		
+ 564               	 ;  0 "" 2
+ 565               	.LVL35:
+ 566               	/* #NOAPP */
+ 567 015a 00C0      		rjmp .L92
+ 568               	.LVL36:
+ 569               	.L44:
+ 570               	.LBE136:
+ 571               	.LSM87:
+ 572 015c 8E34      		cpi r24,lo8(78)
+ 573 015e 01F4      		brne .L45
+ 574               	.LBB137:
+ 575               	.LSM88:
+ 576 0160 E3E0      		ldi r30,lo8(3)
+ 577 0162 F0E0      		ldi r31,hi8(3)
+ 578 0164 89E0      		ldi r24,lo8(9)
+ 579               	.LVL37:
+ 580               	/* #APP */
+ 581               	 ;  577 "Caterina.c" 1
+ 582 0166 8093 5700 		sts 87, r24
+ 583 016a 8491      		lpm r24, Z
+ 584               		
+ 585               	 ;  0 "" 2
+ 586               	.LVL38:
+ 587               	/* #NOAPP */
+ 588 016c 00C0      		rjmp .L92
+ 589               	.LVL39:
+ 590               	.L45:
+ 591               	.LBE137:
+ 592               	.LSM89:
+ 593 016e 8135      		cpi r24,lo8(81)
+ 594 0170 01F4      		brne .L46
+ 595               	.LBB138:
+ 596               	.LSM90:
+ 597 0172 E2E0      		ldi r30,lo8(2)
+ 598 0174 F0E0      		ldi r31,hi8(2)
+ 599 0176 89E0      		ldi r24,lo8(9)
+ 600               	.LVL40:
+ 601               	/* #APP */
+ 602               	 ;  581 "Caterina.c" 1
+ 603 0178 8093 5700 		sts 87, r24
+ 604 017c 8491      		lpm r24, Z
+ 605               		
+ 606               	 ;  0 "" 2
+ 607               	.LVL41:
+ 608               	/* #NOAPP */
+ 609 017e 00C0      		rjmp .L92
+ 610               	.LVL42:
+ 611               	.L46:
+ 612               	.LBE138:
+ 613               	.LSM91:
+ 614 0180 8236      		cpi r24,lo8(98)
+ 615 0182 01F4      		brne .L47
+ 616               	.LSM92:
+ 617 0184 89E5      		ldi r24,lo8(89)
+ 618               	.LVL43:
+ 619 0186 0E94 0000 		call WriteNextResponseByte
+ 620               	.LSM93:
+ 621 018a 80E0      		ldi r24,lo8(0)
+ 622 018c 0E94 0000 		call WriteNextResponseByte
+ 623               	.LSM94:
+ 624 0190 80E8      		ldi r24,lo8(-128)
+ 625 0192 00C0      		rjmp .L92
+ 626               	.LVL44:
+ 627               	.L47:
+ 628               	.LSM95:
+ 629 0194 8234      		cpi r24,lo8(66)
+ 630 0196 01F0      		breq .L48
+ 631 0198 8736      		cpi r24,lo8(103)
+ 632 019a 01F0      		breq .+2
+ 633 019c 00C0      		rjmp .L49
+ 634               	.L48:
+ 635               	.LSM96:
+ 636 019e 1092 0000 		sts (Timeout)+1,__zero_reg__
+ 637 01a2 1092 0000 		sts Timeout,__zero_reg__
+ 638               	.LBB139:
+ 639               	.LSM97:
+ 640 01a6 0E94 0000 		call FetchNextCommandByte
+ 641               	.LVL45:
+ 642 01aa 082F      		mov r16,r24
+ 643               	.LSM98:
+ 644 01ac 0E94 0000 		call FetchNextCommandByte
+ 645 01b0 F82E      		mov r15,r24
+ 646               	.LSM99:
+ 647 01b2 0E94 0000 		call FetchNextCommandByte
+ 648 01b6 682E      		mov r6,r24
+ 649               	.LVL46:
+ 650               	.LBB140:
+ 651               	.LSM100:
+ 652 01b8 8554      		subi r24,lo8(-(-69))
+ 653 01ba 8230      		cpi r24,lo8(2)
+ 654 01bc 00F0      		brlo .+2
+ 655 01be 00C0      		rjmp .L94
+ 656               	.L50:
+ 657               	.LSM101:
+ 658 01c0 902F      		mov r25,r16
+ 659               	.LVL47:
+ 660 01c2 80E0      		ldi r24,lo8(0)
+ 661               	.LVL48:
+ 662               	.LSM102:
+ 663 01c4 CF2D      		mov r28,r15
+ 664               	.LVL49:
+ 665 01c6 D0E0      		ldi r29,lo8(0)
+ 666               	.LVL50:
+ 667 01c8 C82B      		or r28,r24
+ 668 01ca D92B      		or r29,r25
+ 669               	.LVL51:
+ 670               	.LSM103:
+ 671 01cc 1092 6F00 		sts 111,__zero_reg__
+ 672               	.LSM104:
+ 673 01d0 1736      		cpi r17,lo8(103)
+ 674 01d2 01F0      		breq .+2
+ 675 01d4 00C0      		rjmp .L51
+ 676               	.LSM105:
+ 677 01d6 81E1      		ldi r24,lo8(17)
+ 678               	/* #APP */
+ 679               	 ;  299 "Caterina.c" 1
+ 680 01d8 8093 5700 		sts 87, r24
+ 681 01dc E895      		spm
+ 682               		
+ 683               	 ;  0 "" 2
+ 684               	/* #NOAPP */
+ 685 01de DD24      		clr r13
+ 686               	.LVL52:
+ 687               	.LSM106:
+ 688 01e0 CC24      		clr r12
+ 689 01e2 C394      		inc r12
+ 690 01e4 00C0      		rjmp .L52
+ 691               	.L56:
+ 692 01e6 E090 0000 		lds r14,CurrAddress
+ 693 01ea F090 0000 		lds r15,(CurrAddress)+1
+ 694 01ee 0091 0000 		lds r16,(CurrAddress)+2
+ 695 01f2 1091 0000 		lds r17,(CurrAddress)+3
+ 696               	.LSM107:
+ 697 01f6 B6E4      		ldi r27,lo8(70)
+ 698 01f8 6B16      		cp r6,r27
+ 699 01fa 01F4      		brne .L53
+ 700               	.LBB144:
+ 701               	.LSM108:
+ 702 01fc ED2D      		mov r30,r13
+ 703 01fe F0E0      		ldi r31,lo8(0)
+ 704               	.LVL53:
+ 705 0200 EE29      		or r30,r14
+ 706 0202 FF29      		or r31,r15
+ 707               	.LVL54:
+ 708               	/* #APP */
+ 709               	 ;  309 "Caterina.c" 1
+ 710 0204 E491      		lpm r30, Z
+ 711               		
+ 712               	 ;  0 "" 2
+ 713               	.LVL55:
+ 714               	/* #NOAPP */
+ 715               	.LBE144:
+ 716 0206 8E2F      		mov r24,r30
+ 717 0208 0E94 0000 		call WriteNextResponseByte
+ 718               	.LVL56:
+ 719               	.LSM109:
+ 720 020c DD20      		tst r13
+ 721               	.LVL57:
+ 722 020e 01F0      		breq .L54
+ 723               	.LSM110:
+ 724 0210 82E0      		ldi r24,lo8(2)
+ 725 0212 90E0      		ldi r25,hi8(2)
+ 726 0214 A0E0      		ldi r26,hlo8(2)
+ 727 0216 B0E0      		ldi r27,hhi8(2)
+ 728 0218 E80E      		add r14,r24
+ 729 021a F91E      		adc r15,r25
+ 730 021c 0A1F      		adc r16,r26
+ 731 021e 1B1F      		adc r17,r27
+ 732 0220 E092 0000 		sts CurrAddress,r14
+ 733 0224 F092 0000 		sts (CurrAddress)+1,r15
+ 734 0228 0093 0000 		sts (CurrAddress)+2,r16
+ 735 022c 1093 0000 		sts (CurrAddress)+3,r17
+ 736               	.L54:
+ 737               	.LSM111:
+ 738 0230 DC24      		eor r13,r12
+ 739 0232 00C0      		rjmp .L55
+ 740               	.L53:
+ 741               	.LBE140:
+ 742               	.LSM112:
+ 743 0234 D801      		movw r26,r16
+ 744 0236 C701      		movw r24,r14
+ 745 0238 B695      		lsr r27
+ 746 023a A795      		ror r26
+ 747 023c 9795      		ror r25
+ 748 023e 8795      		ror r24
+ 749 0240 0E94 0000 		call __eerd_byte_m32u4
+ 750               	.LBB148:
+ 751 0244 0E94 0000 		call WriteNextResponseByte
+ 752               	.LSM113:
+ 753 0248 82E0      		ldi r24,lo8(2)
+ 754 024a 90E0      		ldi r25,hi8(2)
+ 755 024c A0E0      		ldi r26,hlo8(2)
+ 756 024e B0E0      		ldi r27,hhi8(2)
+ 757 0250 E80E      		add r14,r24
+ 758 0252 F91E      		adc r15,r25
+ 759 0254 0A1F      		adc r16,r26
+ 760 0256 1B1F      		adc r17,r27
+ 761 0258 E092 0000 		sts CurrAddress,r14
+ 762 025c F092 0000 		sts (CurrAddress)+1,r15
+ 763 0260 0093 0000 		sts (CurrAddress)+2,r16
+ 764 0264 1093 0000 		sts (CurrAddress)+3,r17
+ 765               	.L55:
+ 766 0268 2197      		sbiw r28,1
+ 767               	.L52:
+ 768               	.LSM114:
+ 769 026a 2097      		sbiw r28,0
+ 770 026c 01F0      		breq .+2
+ 771 026e 00C0      		rjmp .L56
+ 772 0270 00C0      		rjmp .L57
+ 773               	.LVL58:
+ 774               	.L51:
+ 775               	.LBB143:
+ 776               	.LSM115:
+ 777 0272 8090 0000 		lds r8,CurrAddress
+ 778 0276 9090 0000 		lds r9,(CurrAddress)+1
+ 779 027a A090 0000 		lds r10,(CurrAddress)+2
+ 780 027e B090 0000 		lds r11,(CurrAddress)+3
+ 781               	.LVL59:
+ 782               	.LSM116:
+ 783 0282 96E4      		ldi r25,lo8(70)
+ 784 0284 6916      		cp r6,r25
+ 785 0286 01F0      		breq .+2
+ 786 0288 00C0      		rjmp .L58
+ 787               	.LSM117:
+ 788 028a 83E0      		ldi r24,lo8(3)
+ 789 028c F401      		movw r30,r8
+ 790               	.LVL60:
+ 791               	/* #APP */
+ 792               	 ;  334 "Caterina.c" 1
+ 793 028e 8093 5700 		sts 87, r24
+ 794 0292 E895      		spm
+ 795               		
+ 796               	 ;  0 "" 2
+ 797               	/* #NOAPP */
+ 798               	.L59:
+ 799               	.LBE143:
+ 800               	.LBE148:
+ 801               	.LSM118:
+ 802 0294 07B6      		in __tmp_reg__,87-32
+ 803 0296 00FC      		sbrc __tmp_reg__,0
+ 804 0298 00C0      		rjmp .L59
+ 805 029a 00C0      		rjmp .L58
+ 806               	.LVL61:
+ 807               	.L65:
+ 808               	.LBB149:
+ 809               	.LBB145:
+ 810               	.LSM119:
+ 811 029c F6E4      		ldi r31,lo8(70)
+ 812 029e 6F16      		cp r6,r31
+ 813 02a0 01F4      		brne .L60
+ 814               	.LSM120:
+ 815 02a2 7720      		tst r7
+ 816 02a4 01F0      		breq .L61
+ 817               	.LSM121:
+ 818 02a6 E090 0000 		lds r14,CurrAddress
+ 819 02aa F090 0000 		lds r15,(CurrAddress)+1
+ 820 02ae 0091 0000 		lds r16,(CurrAddress)+2
+ 821 02b2 1091 0000 		lds r17,(CurrAddress)+3
+ 822               	.LBE145:
+ 823               	.LBE149:
+ 824 02b6 0E94 0000 		call FetchNextCommandByte
+ 825               	.LVL62:
+ 826               	.LBB150:
+ 827               	.LBB142:
+ 828 02ba D82E      		mov r13,r24
+ 829 02bc CC24      		clr r12
+ 830 02be 852D      		mov r24,r5
+ 831 02c0 90E0      		ldi r25,lo8(0)
+ 832               	.LVL63:
+ 833 02c2 8C29      		or r24,r12
+ 834 02c4 9D29      		or r25,r13
+ 835               	.LVL64:
+ 836 02c6 F701      		movw r30,r14
+ 837               	/* #APP */
+ 838               	 ;  346 "Caterina.c" 1
+ 839 02c8 0C01      		movw  r0, r24
+ 840 02ca 4092 5700 		sts 87, r4
+ 841 02ce E895      		spm
+ 842 02d0 1124      		clr  r1
+ 843               		
+ 844               	 ;  0 "" 2
+ 845               	.LSM122:
+ 846               	/* #NOAPP */
+ 847 02d2 82E0      		ldi r24,lo8(2)
+ 848 02d4 90E0      		ldi r25,hi8(2)
+ 849 02d6 A0E0      		ldi r26,hlo8(2)
+ 850 02d8 B0E0      		ldi r27,hhi8(2)
+ 851               	.LVL65:
+ 852 02da E80E      		add r14,r24
+ 853 02dc F91E      		adc r15,r25
+ 854 02de 0A1F      		adc r16,r26
+ 855 02e0 1B1F      		adc r17,r27
+ 856 02e2 E092 0000 		sts CurrAddress,r14
+ 857 02e6 F092 0000 		sts (CurrAddress)+1,r15
+ 858 02ea 0093 0000 		sts (CurrAddress)+2,r16
+ 859 02ee 1093 0000 		sts (CurrAddress)+3,r17
+ 860 02f2 00C0      		rjmp .L62
+ 861               	.LVL66:
+ 862               	.L61:
+ 863               	.LBE142:
+ 864               	.LBE150:
+ 865               	.LSM123:
+ 866 02f4 0E94 0000 		call FetchNextCommandByte
+ 867               	.LVL67:
+ 868 02f8 582E      		mov r5,r24
+ 869               	.LVL68:
+ 870               	.L62:
+ 871               	.LBB151:
+ 872               	.LBB146:
+ 873               	.LSM124:
+ 874 02fa 7424      		eor r7,r4
+ 875 02fc 00C0      		rjmp .L63
+ 876               	.L60:
+ 877               	.LSM125:
+ 878 02fe E090 0000 		lds r14,CurrAddress
+ 879 0302 F090 0000 		lds r15,(CurrAddress)+1
+ 880 0306 0091 0000 		lds r16,(CurrAddress)+2
+ 881 030a 1091 0000 		lds r17,(CurrAddress)+3
+ 882 030e 1695      		lsr r17
+ 883 0310 0795      		ror r16
+ 884 0312 F794      		ror r15
+ 885 0314 E794      		ror r14
+ 886               	.LBE146:
+ 887               	.LBE151:
+ 888 0316 0E94 0000 		call FetchNextCommandByte
+ 889               	.LVL69:
+ 890 031a 682F      		mov r22,r24
+ 891               	.LBB152:
+ 892               	.LBB141:
+ 893 031c C701      		movw r24,r14
+ 894 031e 0E94 0000 		call __eewr_byte_m32u4
+ 895               	.LSM126:
+ 896 0322 8091 0000 		lds r24,CurrAddress
+ 897 0326 9091 0000 		lds r25,(CurrAddress)+1
+ 898 032a A091 0000 		lds r26,(CurrAddress)+2
+ 899 032e B091 0000 		lds r27,(CurrAddress)+3
+ 900 0332 0296      		adiw r24,2
+ 901 0334 A11D      		adc r26,__zero_reg__
+ 902 0336 B11D      		adc r27,__zero_reg__
+ 903 0338 8093 0000 		sts CurrAddress,r24
+ 904 033c 9093 0000 		sts (CurrAddress)+1,r25
+ 905 0340 A093 0000 		sts (CurrAddress)+2,r26
+ 906 0344 B093 0000 		sts (CurrAddress)+3,r27
+ 907               	.LVL70:
+ 908               	.L63:
+ 909 0348 2197      		sbiw r28,1
+ 910 034a 00C0      		rjmp .L64
+ 911               	.LVL71:
+ 912               	.L58:
+ 913 034c 5524      		clr r5
+ 914               	.LVL72:
+ 915 034e 7724      		clr r7
+ 916               	.LVL73:
+ 917               	.LSM127:
+ 918 0350 4424      		clr r4
+ 919 0352 4394      		inc r4
+ 920               	.LVL74:
+ 921               	.L64:
+ 922               	.LSM128:
+ 923 0354 2097      		sbiw r28,0
+ 924 0356 01F0      		breq .+2
+ 925 0358 00C0      		rjmp .L65
+ 926               	.LSM129:
+ 927 035a 96E4      		ldi r25,lo8(70)
+ 928               	.LVL75:
+ 929 035c 6916      		cp r6,r25
+ 930 035e 01F4      		brne .L66
+ 931               	.LSM130:
+ 932 0360 85E0      		ldi r24,lo8(5)
+ 933 0362 F401      		movw r30,r8
+ 934               	.LVL76:
+ 935               	/* #APP */
+ 936               	 ;  372 "Caterina.c" 1
+ 937 0364 8093 5700 		sts 87, r24
+ 938 0368 E895      		spm
+ 939               		
+ 940               	 ;  0 "" 2
+ 941               	/* #NOAPP */
+ 942               	.L67:
+ 943               	.LBE141:
+ 944               	.LBE152:
+ 945               	.LSM131:
+ 946 036a 07B6      		in __tmp_reg__,87-32
+ 947 036c 00FC      		sbrc __tmp_reg__,0
+ 948 036e 00C0      		rjmp .L67
+ 949               	.LVL77:
+ 950               	.L66:
+ 951               	.LBB153:
+ 952               	.LBB147:
+ 953               	.LSM132:
+ 954 0370 8DE0      		ldi r24,lo8(13)
+ 955 0372 0E94 0000 		call WriteNextResponseByte
+ 956               	.LVL78:
+ 957               	.L57:
+ 958               	.LBE147:
+ 959               	.LSM133:
+ 960 0376 82E0      		ldi r24,lo8(2)
+ 961 0378 8093 6F00 		sts 111,r24
+ 962 037c 00C0      		rjmp .L27
+ 963               	.LVL79:
+ 964               	.L49:
+ 965               	.LBE153:
+ 966               	.LBE139:
+ 967               	.LSM134:
+ 968 037e 8334      		cpi r24,lo8(67)
+ 969 0380 01F4      		brne .L68
+ 970               	.LSM135:
+ 971 0382 0091 0000 		lds r16,CurrAddress
+ 972 0386 1091 0000 		lds r17,(CurrAddress)+1
+ 973 038a 0E94 0000 		call FetchNextCommandByte
+ 974               	.LVL80:
+ 975 038e 90E0      		ldi r25,lo8(0)
+ 976 0390 21E0      		ldi r18,lo8(1)
+ 977 0392 F801      		movw r30,r16
+ 978               	/* #APP */
+ 979               	 ;  604 "Caterina.c" 1
+ 980 0394 0C01      		movw  r0, r24
+ 981 0396 2093 5700 		sts 87, r18
+ 982 039a E895      		spm
+ 983 039c 1124      		clr  r1
+ 984               		
+ 985               	 ;  0 "" 2
+ 986               	/* #NOAPP */
+ 987 039e 00C0      		rjmp .L93
+ 988               	.LVL81:
+ 989               	.L68:
+ 990               	.LSM136:
+ 991 03a0 8336      		cpi r24,lo8(99)
+ 992 03a2 01F4      		brne .L69
+ 993               	.LSM137:
+ 994 03a4 E090 0000 		lds r14,CurrAddress
+ 995 03a8 F090 0000 		lds r15,(CurrAddress)+1
+ 996 03ac 0091 0000 		lds r16,(CurrAddress)+2
+ 997 03b0 1091 0000 		lds r17,(CurrAddress)+3
+ 998 03b4 0E94 0000 		call FetchNextCommandByte
+ 999               	.LVL82:
+ 1000 03b8 F701      		movw r30,r14
+ 1001 03ba E160      		ori r30,lo8(1)
+ 1002 03bc 90E0      		ldi r25,lo8(0)
+ 1003 03be 21E0      		ldi r18,lo8(1)
+ 1004               	/* #APP */
+ 1005               	 ;  612 "Caterina.c" 1
+ 1006 03c0 0C01      		movw  r0, r24
+ 1007 03c2 2093 5700 		sts 87, r18
+ 1008 03c6 E895      		spm
+ 1009 03c8 1124      		clr  r1
+ 1010               		
+ 1011               	 ;  0 "" 2
+ 1012               	.LSM138:
+ 1013               	/* #NOAPP */
+ 1014 03ca 82E0      		ldi r24,lo8(2)
+ 1015 03cc 90E0      		ldi r25,hi8(2)
+ 1016 03ce A0E0      		ldi r26,hlo8(2)
+ 1017 03d0 B0E0      		ldi r27,hhi8(2)
+ 1018 03d2 E80E      		add r14,r24
+ 1019 03d4 F91E      		adc r15,r25
+ 1020 03d6 0A1F      		adc r16,r26
+ 1021 03d8 1B1F      		adc r17,r27
+ 1022 03da E092 0000 		sts CurrAddress,r14
+ 1023 03de F092 0000 		sts (CurrAddress)+1,r15
+ 1024 03e2 0093 0000 		sts (CurrAddress)+2,r16
+ 1025 03e6 1093 0000 		sts (CurrAddress)+3,r17
+ 1026 03ea 00C0      		rjmp .L93
+ 1027               	.LVL83:
+ 1028               	.L69:
+ 1029               	.LSM139:
+ 1030 03ec 8D36      		cpi r24,lo8(109)
+ 1031 03ee 01F4      		brne .L70
+ 1032               	.LSM140:
+ 1033 03f0 E091 0000 		lds r30,CurrAddress
+ 1034 03f4 F091 0000 		lds r31,(CurrAddress)+1
+ 1035 03f8 85E0      		ldi r24,lo8(5)
+ 1036               	.LVL84:
+ 1037               	/* #APP */
+ 1038               	 ;  623 "Caterina.c" 1
+ 1039 03fa 8093 5700 		sts 87, r24
+ 1040 03fe E895      		spm
+ 1041               		
+ 1042               	 ;  0 "" 2
+ 1043               	/* #NOAPP */
+ 1044               	.L71:
+ 1045               	.LSM141:
+ 1046 0400 07B6      		in __tmp_reg__,87-32
+ 1047 0402 00FC      		sbrc __tmp_reg__,0
+ 1048 0404 00C0      		rjmp .L71
+ 1049 0406 00C0      		rjmp .L93
+ 1050               	.LVL85:
+ 1051               	.L70:
+ 1052               	.LSM142:
+ 1053 0408 8235      		cpi r24,lo8(82)
+ 1054 040a 01F4      		brne .L72
+ 1055               	.LBB154:
+ 1056               	.LBB155:
+ 1057               	.LSM143:
+ 1058 040c E091 0000 		lds r30,CurrAddress
+ 1059 0410 F091 0000 		lds r31,(CurrAddress)+1
+ 1060               	.LVL86:
+ 1061               	/* #APP */
+ 1062               	 ;  636 "Caterina.c" 1
+ 1063 0414 0591      		lpm r16, Z+
+ 1064 0416 1491      		lpm r17, Z
+ 1065               		
+ 1066               	 ;  0 "" 2
+ 1067               	.LVL87:
+ 1068               	/* #NOAPP */
+ 1069               	.LBE155:
+ 1070               	.LSM144:
+ 1071 0418 812F      		mov r24,r17
+ 1072               	.LVL88:
+ 1073 041a 0E94 0000 		call WriteNextResponseByte
+ 1074               	.LVL89:
+ 1075               	.LSM145:
+ 1076 041e 802F      		mov r24,r16
+ 1077 0420 00C0      		rjmp .L92
+ 1078               	.LVL90:
+ 1079               	.L72:
+ 1080               	.LBE154:
+ 1081               	.LSM146:
+ 1082 0422 8434      		cpi r24,lo8(68)
+ 1083 0424 01F4      		brne .L73
+ 1084               	.LSM147:
+ 1085 0426 E090 0000 		lds r14,CurrAddress
+ 1086 042a F090 0000 		lds r15,(CurrAddress)+1
+ 1087 042e 0091 0000 		lds r16,(CurrAddress)+2
+ 1088 0432 1091 0000 		lds r17,(CurrAddress)+3
+ 1089 0436 1695      		lsr r17
+ 1090 0438 0795      		ror r16
+ 1091 043a F794      		ror r15
+ 1092 043c E794      		ror r14
+ 1093 043e 0E94 0000 		call FetchNextCommandByte
+ 1094               	.LVL91:
+ 1095 0442 682F      		mov r22,r24
+ 1096 0444 C701      		movw r24,r14
+ 1097 0446 0E94 0000 		call __eewr_byte_m32u4
+ 1098               	.LSM148:
+ 1099 044a 8091 0000 		lds r24,CurrAddress
+ 1100 044e 9091 0000 		lds r25,(CurrAddress)+1
+ 1101 0452 A091 0000 		lds r26,(CurrAddress)+2
+ 1102 0456 B091 0000 		lds r27,(CurrAddress)+3
+ 1103 045a 0296      		adiw r24,2
+ 1104 045c A11D      		adc r26,__zero_reg__
+ 1105 045e B11D      		adc r27,__zero_reg__
+ 1106               	.L95:
+ 1107 0460 8093 0000 		sts CurrAddress,r24
+ 1108 0464 9093 0000 		sts (CurrAddress)+1,r25
+ 1109 0468 A093 0000 		sts (CurrAddress)+2,r26
+ 1110 046c B093 0000 		sts (CurrAddress)+3,r27
+ 1111 0470 00C0      		rjmp .L93
+ 1112               	.LVL92:
+ 1113               	.L73:
+ 1114               	.LSM149:
+ 1115 0472 8436      		cpi r24,lo8(100)
+ 1116 0474 01F4      		brne .L74
+ 1117               	.LSM150:
+ 1118 0476 E090 0000 		lds r14,CurrAddress
+ 1119 047a F090 0000 		lds r15,(CurrAddress)+1
+ 1120 047e 0091 0000 		lds r16,(CurrAddress)+2
+ 1121 0482 1091 0000 		lds r17,(CurrAddress)+3
+ 1122 0486 D801      		movw r26,r16
+ 1123 0488 C701      		movw r24,r14
+ 1124               	.LVL93:
+ 1125 048a B695      		lsr r27
+ 1126 048c A795      		ror r26
+ 1127 048e 9795      		ror r25
+ 1128 0490 8795      		ror r24
+ 1129 0492 0E94 0000 		call __eerd_byte_m32u4
+ 1130 0496 0E94 0000 		call WriteNextResponseByte
+ 1131               	.LSM151:
+ 1132 049a 82E0      		ldi r24,lo8(2)
+ 1133 049c 90E0      		ldi r25,hi8(2)
+ 1134 049e A0E0      		ldi r26,hlo8(2)
+ 1135 04a0 B0E0      		ldi r27,hhi8(2)
+ 1136 04a2 E80E      		add r14,r24
+ 1137 04a4 F91E      		adc r15,r25
+ 1138 04a6 0A1F      		adc r16,r26
+ 1139 04a8 1B1F      		adc r17,r27
+ 1140 04aa E092 0000 		sts CurrAddress,r14
+ 1141 04ae F092 0000 		sts (CurrAddress)+1,r15
+ 1142 04b2 0093 0000 		sts (CurrAddress)+2,r16
+ 1143 04b6 1093 0000 		sts (CurrAddress)+3,r17
+ 1144 04ba 00C0      		rjmp .L27
+ 1145               	.LVL94:
+ 1146               	.L74:
+ 1147               	.LSM152:
+ 1148 04bc 8B31      		cpi r24,lo8(27)
+ 1149 04be 01F0      		breq .L27
+ 1150               	.LVL95:
+ 1151               	.L94:
+ 1152               	.LSM153:
+ 1153 04c0 8FE3      		ldi r24,lo8(63)
+ 1154               	.LVL96:
+ 1155               	.L92:
+ 1156 04c2 0E94 0000 		call WriteNextResponseByte
+ 1157               	.LVL97:
+ 1158               	.L27:
+ 1159               	.LBB156:
+ 1160               	.LBB157:
+ 1161               	.LSM154:
+ 1162 04c6 83E0      		ldi r24,lo8(3)
+ 1163 04c8 8093 E900 		sts 233,r24
+ 1164               	.LBE157:
+ 1165               	.LBE156:
+ 1166               	.LBB158:
+ 1167               	.LBB159:
+ 1168               	.LSM155:
+ 1169 04cc 9091 E800 		lds r25,232
+ 1170               	.LBE159:
+ 1171               	.LBE158:
+ 1172               	.LBB160:
+ 1173               	.LBB161:
+ 1174               	.LSM156:
+ 1175 04d0 8091 E800 		lds r24,232
+ 1176 04d4 8E77      		andi r24,lo8(126)
+ 1177 04d6 8093 E800 		sts 232,r24
+ 1178               	.LBE161:
+ 1179               	.LBE160:
+ 1180               	.LSM157:
+ 1181 04da 95FF      		sbrs r25,5
+ 1182 04dc 00C0      		rjmp .L90
+ 1183 04de 00C0      		rjmp .L91
+ 1184               	.L77:
+ 1185               	.LSM158:
+ 1186 04e0 8EB3      		in r24,62-32
+ 1187 04e2 8823      		tst r24
+ 1188 04e4 01F0      		breq .L79
+ 1189               	.L90:
+ 1190               	.LBB162:
+ 1191               	.LBB163:
+ 1192               	.LSM159:
+ 1193 04e6 8091 E800 		lds r24,232
+ 1194               	.LBE163:
+ 1195               	.LBE162:
+ 1196               	.LSM160:
+ 1197 04ea 80FF      		sbrs r24,0
+ 1198 04ec 00C0      		rjmp .L77
+ 1199               	.LBB164:
+ 1200               	.LBB165:
+ 1201               	.LSM161:
+ 1202 04ee 8091 E800 		lds r24,232
+ 1203 04f2 8E77      		andi r24,lo8(126)
+ 1204 04f4 8093 E800 		sts 232,r24
+ 1205 04f8 00C0      		rjmp .L91
+ 1206               	.L78:
+ 1207               	.LBE165:
+ 1208               	.LBE164:
+ 1209               	.LSM162:
+ 1210 04fa 8EB3      		in r24,62-32
+ 1211 04fc 8823      		tst r24
+ 1212 04fe 01F0      		breq .L79
+ 1213               	.L91:
+ 1214               	.LBB166:
+ 1215               	.LBB167:
+ 1216               	.LSM163:
+ 1217 0500 8091 E800 		lds r24,232
+ 1218               	.LBE167:
+ 1219               	.LBE166:
+ 1220               	.LSM164:
+ 1221 0504 80FF      		sbrs r24,0
+ 1222 0506 00C0      		rjmp .L78
+ 1223               	.LBB168:
+ 1224               	.LBB169:
+ 1225               	.LSM165:
+ 1226 0508 84E0      		ldi r24,lo8(4)
+ 1227 050a 8093 E900 		sts 233,r24
+ 1228               	.LBE169:
+ 1229               	.LBE168:
+ 1230               	.LBB170:
+ 1231               	.LBB171:
+ 1232               	.LSM166:
+ 1233 050e 8091 E800 		lds r24,232
+ 1234 0512 8B77      		andi r24,lo8(123)
+ 1235 0514 8093 E800 		sts 232,r24
+ 1236               	.L79:
+ 1237               	/* epilogue start */
+ 1238               	.LBE171:
+ 1239               	.LBE170:
+ 1240               	.LSM167:
+ 1241 0518 DF91      		pop r29
+ 1242               	.LVL98:
+ 1243 051a CF91      		pop r28
+ 1244               	.LVL99:
+ 1245 051c 1F91      		pop r17
+ 1246               	.LVL100:
+ 1247 051e 0F91      		pop r16
+ 1248               	.LVL101:
+ 1249 0520 FF90      		pop r15
+ 1250 0522 EF90      		pop r14
+ 1251 0524 DF90      		pop r13
+ 1252 0526 CF90      		pop r12
+ 1253 0528 BF90      		pop r11
+ 1254 052a AF90      		pop r10
+ 1255 052c 9F90      		pop r9
+ 1256 052e 8F90      		pop r8
+ 1257               	.LVL102:
+ 1258 0530 7F90      		pop r7
+ 1259               	.LVL103:
+ 1260 0532 6F90      		pop r6
+ 1261               	.LVL104:
+ 1262 0534 5F90      		pop r5
+ 1263               	.LVL105:
+ 1264 0536 4F90      		pop r4
+ 1265 0538 0895      		ret
+ 1266               	.LFE102:
+ 1268               		.section	.text.EVENT_USB_Device_ControlRequest,"ax",@progbits
+ 1269               	.global	EVENT_USB_Device_ControlRequest
+ 1271               	EVENT_USB_Device_ControlRequest:
+ 1272               	.LFB98:
+ 1273               	.LSM168:
+ 1274               	/* prologue: function */
+ 1275               	/* frame size = 0 */
+ 1276               	.LSM169:
+ 1277 0000 9091 0000 		lds r25,USB_ControlRequest
+ 1278 0004 892F      		mov r24,r25
+ 1279 0006 8F77      		andi r24,lo8(127)
+ 1280 0008 8132      		cpi r24,lo8(33)
+ 1281 000a 01F4      		brne .L100
+ 1282               	.LSM170:
+ 1283 000c 8091 0000 		lds r24,USB_ControlRequest+1
+ 1284 0010 8032      		cpi r24,lo8(32)
+ 1285 0012 01F0      		breq .L98
+ 1286 0014 8132      		cpi r24,lo8(33)
+ 1287 0016 01F4      		brne .L100
+ 1288               	.LSM171:
+ 1289 0018 913A      		cpi r25,lo8(-95)
+ 1290 001a 01F4      		brne .L100
+ 1291               	.LBB172:
+ 1292               	.LBB173:
+ 1293               	.LSM172:
+ 1294 001c 8091 E800 		lds r24,232
+ 1295 0020 877F      		andi r24,lo8(-9)
+ 1296 0022 8093 E800 		sts 232,r24
+ 1297               	.LBE173:
+ 1298               	.LBE172:
+ 1299               	.LSM173:
+ 1300 0026 80E0      		ldi r24,lo8(LineEncoding)
+ 1301 0028 90E0      		ldi r25,hi8(LineEncoding)
+ 1302 002a 67E0      		ldi r22,lo8(7)
+ 1303 002c 70E0      		ldi r23,hi8(7)
+ 1304 002e 0E94 0000 		call Endpoint_Write_Control_Stream_LE
+ 1305               	.LBB174:
+ 1306               	.LBB175:
+ 1307               	.LSM174:
+ 1308 0032 8091 E800 		lds r24,232
+ 1309 0036 8B77      		andi r24,lo8(123)
+ 1310 0038 8093 E800 		sts 232,r24
+ 1311 003c 0895      		ret
+ 1312               	.L98:
+ 1313               	.LBE175:
+ 1314               	.LBE174:
+ 1315               	.LSM175:
+ 1316 003e 9132      		cpi r25,lo8(33)
+ 1317 0040 01F4      		brne .L100
+ 1318               	.LBB176:
+ 1319               	.LBB177:
+ 1320               	.LSM176:
+ 1321 0042 8091 E800 		lds r24,232
+ 1322 0046 877F      		andi r24,lo8(-9)
+ 1323 0048 8093 E800 		sts 232,r24
+ 1324               	.LBE177:
+ 1325               	.LBE176:
+ 1326               	.LSM177:
+ 1327 004c 80E0      		ldi r24,lo8(LineEncoding)
+ 1328 004e 90E0      		ldi r25,hi8(LineEncoding)
+ 1329 0050 67E0      		ldi r22,lo8(7)
+ 1330 0052 70E0      		ldi r23,hi8(7)
+ 1331 0054 0E94 0000 		call Endpoint_Read_Control_Stream_LE
+ 1332               	.LBB178:
+ 1333               	.LBB179:
+ 1334               	.LSM178:
+ 1335 0058 8091 E800 		lds r24,232
+ 1336 005c 8E77      		andi r24,lo8(126)
+ 1337 005e 8093 E800 		sts 232,r24
+ 1338               	.L100:
+ 1339 0062 0895      		ret
+ 1340               	.LBE179:
+ 1341               	.LBE178:
+ 1342               	.LFE98:
+ 1344               		.section	.text.EVENT_USB_Device_ConfigurationChanged,"ax",@progbits
+ 1345               	.global	EVENT_USB_Device_ConfigurationChanged
+ 1347               	EVENT_USB_Device_ConfigurationChanged:
+ 1348               	.LFB97:
+ 1349               	.LSM179:
+ 1350               	/* prologue: function */
+ 1351               	/* frame size = 0 */
+ 1352               	.LBB180:
+ 1353               	.LBB181:
+ 1354               	.LSM180:
+ 1355 0000 82E0      		ldi r24,lo8(2)
+ 1356 0002 61EC      		ldi r22,lo8(-63)
+ 1357 0004 42E0      		ldi r20,lo8(2)
+ 1358 0006 0E94 0000 		call Endpoint_ConfigureEndpoint_Prv
+ 1359               	.LBE181:
+ 1360               	.LBE180:
+ 1361               	.LBB182:
+ 1362               	.LBB183:
+ 1363 000a 83E0      		ldi r24,lo8(3)
+ 1364 000c 61E8      		ldi r22,lo8(-127)
+ 1365 000e 42E1      		ldi r20,lo8(18)
+ 1366 0010 0E94 0000 		call Endpoint_ConfigureEndpoint_Prv
+ 1367               	.LBE183:
+ 1368               	.LBE182:
+ 1369               	.LBB184:
+ 1370               	.LBB185:
+ 1371 0014 84E0      		ldi r24,lo8(4)
+ 1372 0016 60E8      		ldi r22,lo8(-128)
+ 1373 0018 42E1      		ldi r20,lo8(18)
+ 1374 001a 0E94 0000 		call Endpoint_ConfigureEndpoint_Prv
+ 1375               	/* epilogue start */
+ 1376               	.LBE185:
+ 1377               	.LBE184:
+ 1378               	.LSM181:
+ 1379 001e 0895      		ret
+ 1380               	.LFE97:
+ 1382               		.section	.text.SetupHardware,"ax",@progbits
+ 1383               	.global	SetupHardware
+ 1385               	SetupHardware:
+ 1386               	.LFB95:
+ 1387               	.LSM182:
+ 1388               	/* prologue: function */
+ 1389               	/* frame size = 0 */
+ 1390               	.LSM183:
+ 1391 0000 84B7      		in r24,84-32
+ 1392 0002 877F      		andi r24,lo8(-9)
+ 1393 0004 84BF      		out 84-32,r24
+ 1394               	.LSM184:
+ 1395 0006 88E1      		ldi r24,lo8(24)
+ 1396               	/* #APP */
+ 1397               	 ;  157 "Caterina.c" 1
+ 1398 0008 0FB6      		in __tmp_reg__, __SREG__
+ 1399 000a F894      		cli
+ 1400 000c 8093 6000 		sts 96, r24
+ 1401 0010 1092 6000 		sts 96, __zero_reg__
+ 1402 0014 0FBE      		out __SREG__,__tmp_reg__
+ 1403               		
+ 1404               	 ;  0 "" 2
+ 1405               	/* #NOAPP */
+ 1406               	.LBB186:
+ 1407               	.LSM185:
+ 1408 0016 20E8      		ldi r18,lo8(-128)
+ 1409 0018 80E0      		ldi r24,lo8(0)
+ 1410 001a 90E0      		ldi r25,hi8(0)
+ 1411               	/* #APP */
+ 1412               	 ;  160 "Caterina.c" 1
+ 1413 001c 0FB6      		in __tmp_reg__,__SREG__
+ 1414 001e F894      		cli
+ 1415 0020 2093 6100 		sts 97, r18
+ 1416 0024 8093 6100 		sts 97, r24
+ 1417 0028 0FBE      		out __SREG__, __tmp_reg__
+ 1418               	 ;  0 "" 2
+ 1419               	/* #NOAPP */
+ 1420               	.LBE186:
+ 1421               	.LSM186:
+ 1422 002a 81E0      		ldi r24,lo8(1)
+ 1423 002c 85BF      		out 85-32,r24
+ 1424               	.LSM187:
+ 1425 002e 92E0      		ldi r25,lo8(2)
+ 1426 0030 95BF      		out 85-32,r25
+ 1427               	.LSM188:
+ 1428 0032 529A      		sbi 42-32,2
+ 1429 0034 539A      		sbi 42-32,3
+ 1430               	.LSM189:
+ 1431 0036 E1E6      		ldi r30,lo8(97)
+ 1432 0038 F0E0      		ldi r31,hi8(97)
+ 1433 003a 2083      		st Z,r18
+ 1434 003c 1082      		st Z,__zero_reg__
+ 1435               	.LSM190:
+ 1436 003e 5A98      		cbi 43-32,2
+ 1437               	.LSM191:
+ 1438 0040 5B98      		cbi 43-32,3
+ 1439               	.LSM192:
+ 1440 0042 1092 8900 		sts 137,__zero_reg__
+ 1441               	.LSM193:
+ 1442 0046 8AEF      		ldi r24,lo8(-6)
+ 1443 0048 8093 8800 		sts 136,r24
+ 1444               	.LSM194:
+ 1445 004c 9093 6F00 		sts 111,r25
+ 1446               	.LSM195:
+ 1447 0050 83E0      		ldi r24,lo8(3)
+ 1448 0052 8093 8100 		sts 129,r24
+ 1449               	.LSM196:
+ 1450 0056 0E94 0000 		call USB_Init
+ 1451               	/* epilogue start */
+ 1452               	.LSM197:
+ 1453 005a 0895      		ret
+ 1454               	.LFE95:
+ 1456               		.section	.text.main,"ax",@progbits
+ 1457               	.global	main
+ 1459               	main:
+ 1460               	.LFB94:
+ 1461               	.LSM198:
+ 1462               	/* prologue: function */
+ 1463               	/* frame size = 0 */
+ 1464               	.LSM199:
+ 1465 0000 4091 0008 		lds r20,2048
+ 1466 0004 5091 0108 		lds r21,(2048)+1
+ 1467               	.LVL106:
+ 1468               	.LSM200:
+ 1469 0008 1092 0108 		sts (2048)+1,__zero_reg__
+ 1470 000c 1092 0008 		sts 2048,__zero_reg__
+ 1471               	.LSM201:
+ 1472 0010 94B7      		in r25,84-32
+ 1473               	.LVL107:
+ 1474               	.LSM202:
+ 1475 0012 14BE      		out 84-32,__zero_reg__
+ 1476               	.LSM203:
+ 1477 0014 88E1      		ldi r24,lo8(24)
+ 1478               	/* #APP */
+ 1479               	 ;  113 "Caterina.c" 1
+ 1480 0016 0FB6      		in __tmp_reg__, __SREG__
+ 1481 0018 F894      		cli
+ 1482 001a 8093 6000 		sts 96, r24
+ 1483 001e 1092 6000 		sts 96, __zero_reg__
+ 1484 0022 0FBE      		out __SREG__,__tmp_reg__
+ 1485               		
+ 1486               	 ;  0 "" 2
+ 1487               	.LSM204:
+ 1488               	/* #NOAPP */
+ 1489 0024 292F      		mov r18,r25
+ 1490 0026 30E0      		ldi r19,lo8(0)
+ 1491 0028 F901      		movw r30,r18
+ 1492 002a E270      		andi r30,lo8(2)
+ 1493 002c F070      		andi r31,hi8(2)
+ 1494 002e 91FD      		sbrc r25,1
+ 1495 0030 00C0      		rjmp .L106
+ 1496               	.LVL108:
+ 1497               	.LSM205:
+ 1498 0032 90FF      		sbrs r25,0
+ 1499 0034 00C0      		rjmp .L107
+ 1500               	.LBB187:
+ 1501               	/* #APP */
+ 1502               	 ;  117 "Caterina.c" 1
+ 1503 0036 8591      		lpm r24, Z+
+ 1504 0038 9491      		lpm r25, Z
+ 1505               		
+ 1506               	 ;  0 "" 2
+ 1507               	.LVL109:
+ 1508               	/* #NOAPP */
+ 1509               	.LBE187:
+ 1510 003a 8F5F      		subi r24,lo8(-1)
+ 1511 003c 9F4F      		sbci r25,hi8(-1)
+ 1512 003e 01F4      		brne .L114
+ 1513               	.L107:
+ 1514               	.LSM206:
+ 1515 0040 23FF      		sbrs r18,3
+ 1516 0042 00C0      		rjmp .L106
+ 1517 0044 8091 0000 		lds r24,bootKey
+ 1518 0048 9091 0000 		lds r25,(bootKey)+1
+ 1519               	.LVL110:
+ 1520 004c 4817      		cp r20,r24
+ 1521 004e 5907      		cpc r21,r25
+ 1522 0050 01F0      		breq .L106
+ 1523               	.LBB188:
+ 1524 0052 E0E0      		ldi r30,lo8(0)
+ 1525 0054 F0E0      		ldi r31,hi8(0)
+ 1526               	.LVL111:
+ 1527               	/* #APP */
+ 1528               	 ;  121 "Caterina.c" 1
+ 1529 0056 8591      		lpm r24, Z+
+ 1530 0058 9491      		lpm r25, Z
+ 1531               		
+ 1532               	 ;  0 "" 2
+ 1533               	.LVL112:
+ 1534               	/* #NOAPP */
+ 1535               	.LBE188:
+ 1536 005a 8F5F      		subi r24,lo8(-1)
+ 1537 005c 9F4F      		sbci r25,hi8(-1)
+ 1538 005e 01F0      		breq .L106
+ 1539               	.LVL113:
+ 1540               	.L114:
+ 1541               	.LSM207:
+ 1542 0060 0E94 0000 		call StartSketch
+ 1543               	.LVL114:
+ 1544               	.L106:
+ 1545               	.LSM208:
+ 1546 0064 0E94 0000 		call SetupHardware
+ 1547               	.LVL115:
+ 1548               	.LSM209:
+ 1549               	/* #APP */
+ 1550               	 ;  130 "Caterina.c" 1
+ 1551 0068 7894      		sei
+ 1552               	 ;  0 "" 2
+ 1553               	.LSM210:
+ 1554               	/* #NOAPP */
+ 1555 006a 1092 0000 		sts (Timeout)+1,__zero_reg__
+ 1556 006e 1092 0000 		sts Timeout,__zero_reg__
+ 1557 0072 00C0      		rjmp .L113
+ 1558               	.L109:
+ 1559               	.LSM211:
+ 1560 0074 0E94 0000 		call CDC_Task
+ 1561               	.LSM212:
+ 1562 0078 0E94 0000 		call USB_USBTask
+ 1563               	.LSM213:
+ 1564 007c 8091 0000 		lds r24,Timeout
+ 1565 0080 9091 0000 		lds r25,(Timeout)+1
+ 1566 0084 815A      		subi r24,lo8(4001)
+ 1567 0086 9F40      		sbci r25,hi8(4001)
+ 1568 0088 00F0      		brlo .L113
+ 1569               	.LSM214:
+ 1570 008a 1092 0000 		sts RunBootloader,__zero_reg__
+ 1571               	.L113:
+ 1572               	.LSM215:
+ 1573 008e 8091 0000 		lds r24,RunBootloader
+ 1574 0092 8823      		tst r24
+ 1575 0094 01F4      		brne .L109
+ 1576               	.LBB189:
+ 1577               	.LBB190:
+ 1578               	.LSM216:
+ 1579 0096 8091 E000 		lds r24,224
+ 1580 009a 8160      		ori r24,lo8(1)
+ 1581 009c 8093 E000 		sts 224,r24
+ 1582               	.LBE190:
+ 1583               	.LBE189:
+ 1584               	.LSM217:
+ 1585 00a0 0E94 0000 		call StartSketch
+ 1586               	.LSM218:
+ 1587 00a4 80E0      		ldi r24,lo8(0)
+ 1588 00a6 90E0      		ldi r25,hi8(0)
+ 1589               	/* epilogue start */
+ 1590 00a8 0895      		ret
+ 1591               	.LFE94:
+ 1593               	.global	TxLEDPulse
+ 1594               	.global	TxLEDPulse
+ 1595               		.section .bss
+ 1598               	TxLEDPulse:
+ 1599 0000 0000      		.skip 2,0
+ 1600               	.global	RxLEDPulse
+ 1601               	.global	RxLEDPulse
+ 1604               	RxLEDPulse:
+ 1605 0002 0000      		.skip 2,0
+ 1606               	.global	Timeout
+ 1607               	.global	Timeout
+ 1610               	Timeout:
+ 1611 0004 0000      		.skip 2,0
+ 1612               	.global	bootKey
+ 1613               		.data
+ 1616               	bootKey:
+ 1617 0009 7777      		.word	30583
+ 1618               	.global	bootKeyPtr
+ 1621               	bootKeyPtr:
+ 1622 000b 0008      		.word	2048
+ 1625               	LineEncoding:
+ 1626 000d 00        		.byte	0
+ 1627 000e 00        		.byte	0
+ 1628 000f 00        		.byte	0
+ 1629 0010 00        		.byte	0
+ 1630 0011 00        		.byte	0
+ 1631 0012 00        		.byte	0
+ 1632 0013 08        		.byte	8
+ 1635               	RunBootloader:
+ 1636 0014 01        		.byte	1
+ 1637               		.lcomm CurrAddress,4
+ 1726               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 Caterina.c
+C:\Users\mike\AppData\Local\Temp/cc2SATMT.s:2      *ABS*:0000003f __SREG__
+C:\Users\mike\AppData\Local\Temp/cc2SATMT.s:3      *ABS*:0000003e __SP_H__
+C:\Users\mike\AppData\Local\Temp/cc2SATMT.s:4      *ABS*:0000003d __SP_L__
+C:\Users\mike\AppData\Local\Temp/cc2SATMT.s:5      *ABS*:00000034 __CCP__
+C:\Users\mike\AppData\Local\Temp/cc2SATMT.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\mike\AppData\Local\Temp/cc2SATMT.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\mike\AppData\Local\Temp/cc2SATMT.s:19     .text.StartSketch:00000000 StartSketch
+C:\Users\mike\AppData\Local\Temp/cc2SATMT.s:61     .text.__vector_17:00000000 __vector_17
+C:\Users\mike\AppData\Local\Temp/cc2SATMT.s:1598   .bss:00000000 TxLEDPulse
+C:\Users\mike\AppData\Local\Temp/cc2SATMT.s:1604   .bss:00000002 RxLEDPulse
+C:\Users\mike\AppData\Local\Temp/cc2SATMT.s:1610   .bss:00000004 Timeout
+C:\Users\mike\AppData\Local\Temp/cc2SATMT.s:146    .text.FetchNextCommandByte:00000000 FetchNextCommandByte
+C:\Users\mike\AppData\Local\Temp/cc2SATMT.s:207    .text.WriteNextResponseByte:00000000 WriteNextResponseByte
+C:\Users\mike\AppData\Local\Temp/cc2SATMT.s:277    .text.CDC_Task:00000000 CDC_Task
+                             .bss:00000006 CurrAddress
+C:\Users\mike\AppData\Local\Temp/cc2SATMT.s:1271   .text.EVENT_USB_Device_ControlRequest:00000000 EVENT_USB_Device_ControlRequest
+C:\Users\mike\AppData\Local\Temp/cc2SATMT.s:1625   .data:0000000d LineEncoding
+C:\Users\mike\AppData\Local\Temp/cc2SATMT.s:1347   .text.EVENT_USB_Device_ConfigurationChanged:00000000 EVENT_USB_Device_ConfigurationChanged
+C:\Users\mike\AppData\Local\Temp/cc2SATMT.s:1385   .text.SetupHardware:00000000 SetupHardware
+C:\Users\mike\AppData\Local\Temp/cc2SATMT.s:1459   .text.main:00000000 main
+C:\Users\mike\AppData\Local\Temp/cc2SATMT.s:1616   .data:00000009 bootKey
+C:\Users\mike\AppData\Local\Temp/cc2SATMT.s:1635   .data:00000014 RunBootloader
+C:\Users\mike\AppData\Local\Temp/cc2SATMT.s:1621   .data:0000000b bootKeyPtr
+
+UNDEFINED SYMBOLS
+__eerd_byte_m32u4
+__eewr_byte_m32u4
+USB_ControlRequest
+Endpoint_Write_Control_Stream_LE
+Endpoint_Read_Control_Stream_LE
+Endpoint_ConfigureEndpoint_Prv
+USB_Init
+USB_USBTask
+__do_copy_data
+__do_clear_bss
